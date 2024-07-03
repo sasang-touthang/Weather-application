@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body onload="onLoad()">
+    <div>
+      <div class="bg-sky-500">
+        <h1 class="flex justify-center m-0 p-2">Weather Report</h1>
+      </div>
+      <div>
+        <div class="bg-sky-200 p-10 flex flex-col gap-3">
+          <section class="flex flex-col items-start gap-3">
+            <label for="" city>Enter a city name</label>
+            <input
+              id="city"
+              class="p-3 w-60 rounded"
+              list="history"
+              placeholder="E.g. New York, London, Tokyo"
+              name="city"
+            />
+            <datalist id="history"></datalist>
+            <button id="btn" class="bg-sky-500 p-2 rounded">Search</button>
+          </section>
+          <p>or</p>
+          <section>
+            <button id="currentLocationBtn" class="bg-sky-500 p-2 rounded">
+              Use Current Location
+            </button>
+          </section>
+        </div>
+        <!-- Weather Display -->
+        <div id="weatherDisplay" class="hidden bg-sky-300">
+          <div
+            class="bg-sky-500 flex flex justify-between items-center p-5 text-white font-mono"
+          >
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl" id="cityName"></h2>
+              <p id="temperature"></p>
+              <p id="wind"></p>
+              <p id="humidity"></p>
+            </div>
+            <div id="icon" class="flex flex-col items-center"></div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-mono text-center pt-5 underline">
+              5-day Forecast
+            </h2>
+            <div
+              id="forecast"
+              class="p-5 w-[100%] flex items-center flex-row justify-center flex-wrap gap-5"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
